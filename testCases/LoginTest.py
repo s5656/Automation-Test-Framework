@@ -1,5 +1,5 @@
 import pytest
-
+import allure
 from pageObject.Login import Login
 from utilities.readProperties import ReadConfigFile
 from utilities.customLogger import LogGenrator
@@ -7,7 +7,7 @@ from utilities.customLogger import LogGenrator
 
 # pytest gathers tests according to a naming convention.
 # By default, any file that is contained tests must be named starting with test_
-
+@allure.severity(allure.severity_level.NORMAL)
 class Test_001_Login:
     readconfig = ReadConfigFile()
     baseURL = readconfig.getBaseUrl()
